@@ -26,9 +26,11 @@ import Heder from  "./heder/Heder";
   return(
 
 			<div style = {styles.contenedor}>
-       <div> { isLoguin ? <Heder /> : <div/>}</div> 
+       <div style = {styles.heder}> 
+         { isLoguin ? <Heder /> : <div/>}
+       </div> 
         <Switch>
-          <Route exact path='/' render={({ history }) => (isLoguin ? <Home history={history} user={user}/> : <Redirect to='/login' />)} />
+          <Route exact path='/' render={({ history }) => (isLoguin ? <Redirect to='/home' /> : <Redirect to='/login' />)} />
           <Route exact path='/login' render={({ history }) => (<Login history={history} />)} />
           <Route exact path='/home' render={({ history }) => (<Home history={history} user={user}/>)} />
           <Route exact path='/clientes' render={({ history }) => (<Clientes history={history} user={user}/>)} />
@@ -47,7 +49,10 @@ const styles = {
     display: 'grid',
 	  gridGap: '10px',
 	  // gridTemplateColumns: '250px repeat(4 , minmax(200px, 1fr))',
-	  // gridTemplateRows: '1fr 3fr 1fr',
+	  gridTemplateRows: '75px 1fr',
+  },
+  heder:{
+    gridRow: '1 / 2',
   }
 }
 

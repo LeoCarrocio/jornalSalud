@@ -201,9 +201,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-materialize */ "./node_modules/react-materialize/lib/index.js");
-/* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_materialize__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _navbar_NavbarMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! .././navbar/NavbarMenu */ "./front/src/navbar/NavbarMenu.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-materialize */ "./node_modules/react-materialize/lib/index.js");
+/* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_materialize__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _navbar_NavbarMenu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! .././navbar/NavbarMenu */ "./front/src/navbar/NavbarMenu.js");
+
 
 
 
@@ -213,13 +215,13 @@ var Heder = function Heder() {
   var user = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(function (state) {
     return state.user.user;
   });
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_3__["Navbar"], {
     alignLinks: "left",
     brand: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       className: "brand-logo right",
       href: "#"
     }, "Logo"),
-    menuIcon: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_2__["Icon"], null, "menu"),
+    menuIcon: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_3__["Icon"], null, "menu"),
     options: {
       draggable: true,
       edge: 'left',
@@ -231,11 +233,39 @@ var Heder = function Heder() {
       outDuration: 200,
       preventScrolling: true
     }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
-    onClick: function noRefCheck() {}
-  }, "Getting started"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
-    href: "components.html"
-  }, "Components"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_NavbarMenu__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_3__["Dropdown"], {
+    options: {
+      alignment: 'left',
+      autoTrigger: true,
+      closeOnClick: true,
+      constrainWidth: true,
+      container: null,
+      coverTrigger: true,
+      hover: false,
+      inDuration: 150,
+      onCloseEnd: null,
+      onCloseStart: null,
+      onOpenEnd: null,
+      onOpenStart: null,
+      outDuration: 250
+    } // trigger={<a href="#!">Dropdown{' '}<Icon right>home</Icon></a>}
+    ,
+    trigger: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      to: "/clientes"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
+      right: true
+    }, "arrow_drop_down"))
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/clientes"
+  }, " clientes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/servicios"
+  }, " servicios"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/presupuestos"
+  }, " presupuestos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/abonos"
+  }, " abonos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_3__["Divider"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/perfil"
+  }, " perfil"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Heder);
@@ -328,14 +358,15 @@ var Main = function Main(props) {
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     style: styles.contenedor
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", isLoguin ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_heder_Heder__WEBPACK_IMPORTED_MODULE_10__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: styles.heder
+  }, isLoguin ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_heder_Heder__WEBPACK_IMPORTED_MODULE_10__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
     render: function render(_ref) {
       var history = _ref.history;
-      return isLoguin ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vistas_home_Home__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        history: history,
-        user: user
+      return isLoguin ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+        to: "/home"
       }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
         to: "/login"
       });
@@ -406,9 +437,12 @@ var styles = {
   contenedor: {
     height: '100vh',
     display: 'grid',
-    gridGap: '10px' // gridTemplateColumns: '250px repeat(4 , minmax(200px, 1fr))',
-    // gridTemplateRows: '1fr 3fr 1fr',
-
+    gridGap: '10px',
+    // gridTemplateColumns: '250px repeat(4 , minmax(200px, 1fr))',
+    gridTemplateRows: '75px 1fr'
+  },
+  heder: {
+    gridRow: '1 / 2'
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (Main);
@@ -40069,7 +40103,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

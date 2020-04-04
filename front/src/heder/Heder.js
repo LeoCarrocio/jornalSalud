@@ -1,5 +1,6 @@
 import React,{ } from "react";
 import { useSelector } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 import { Navbar, NavItem, Icon, Divider,Dropdown } from 'react-materialize';
 
 import NavbarMenu from ".././navbar/NavbarMenu";
@@ -47,18 +48,15 @@ const Heder  = () =>{
         onOpenStart: null,
         outDuration: 250
         }}
-        trigger={<a href="#!">Dropdown{' '}<Icon right>arrow_drop_down</Icon></a>}
-      >
-        <a href="#">
-          one
-        </a>
-        <a href="#">
-          two
-        </a>
+        // trigger={<a href="#!">Dropdown{' '}<Icon right>home</Icon></a>}
+        trigger={<Link to="/clientes"><Icon right>arrow_drop_down</Icon></Link>}
+     >
+        <Link to="/clientes"> clientes</Link>
+        <Link to="/servicios"> servicios</Link>
+        <Link to="/presupuestos"> presupuestos</Link>
+        <Link to="/abonos"> abonos</Link>
         <Divider />
-        <a href="#">
-          three
-        </a>
+        <Link to="/perfil"> perfil</Link>
       </Dropdown>
     </Navbar>
     </div>
