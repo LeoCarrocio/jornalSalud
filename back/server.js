@@ -7,7 +7,7 @@ const path = require ('path');
 
 const db = require('./database/db-config');
 
-const index = require('./routes/index');
+const Index = require('./routes/index');
 
 //app.use(morgan('tiny'));
 app.use(morgan('dev'));
@@ -17,7 +17,8 @@ app.use(cokieParser());
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 //app.use(express.static(`${_dirname}/public`));
-//app.use('/api', Index);
+app.use('/api', Index);
+
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, './public/index.html'));
   });
